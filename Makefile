@@ -9,7 +9,7 @@ docker = docker run --rm -it --init ${dockerargs} $$EXTRA_ARGS ${container_env} 
 
 CROSS_PLATFORMS = linux/amd64 linux/386 linux/arm windows/amd64
 PACKAGES=$(shell go list ./... | grep -v /vendor/)
-PROTOC_FLAGS=-I=. -I=/go/src/github.com/gogo/protobuf -I=/go/src/github.com/gogo/protobuf/protobuf
+PROTOC_FLAGS=-I=. -I=vendor/github.com/gogo/protobuf -I=vendor/github.com/gogo/protobuf/protobuf
 
 export PATH := $(CURDIR)/bin:$(PATH)
 
